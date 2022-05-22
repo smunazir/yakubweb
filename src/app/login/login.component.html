@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="../../../assets/login.jpg" height="100%" width="100%">
+    </div>
+    <div class="col-md-4 mt-3 mb-2">
+      <h3 class="text-success text-center"><b>Welcome To CellScop</b></h3>
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+        
+        <h5 class="text-primary mb-3">Sign In</h5>
+        <div class="form-floating mb-3">
+          <!-- User ID Input -->
+          <div class="form-group">
+            <!-- User ID Input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="userId" formControlName="userId" name="userId" class="form-control form-control-lg"
+                placeholder="Enter User ID" />
+              <label class="form-label" for="form3Example3">User ID</label>
+              <div *ngIf="submitted && f['userId'].errors">
+                <div class="error text-danger">
+                  UserID is mandatory.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <!-- Password input -->
+
+          <div class="form-group">
+            <div class="form-outline mb-3">
+              <input type="password" id="password" formControlName="password" name="password"
+                class="form-control form-control-lg" placeholder="Enter password" />
+              <label class="form-label" for="form3Example4">Password</label>
+              <div *ngIf="submitted && f['password'].errors">
+                <div class="error text-danger">
+                  Password is mandatory.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <div class="d-flex justify-content-between align-items-center">
+
+            <a [routerLink]="['/forget']" class="text-body">Forgot password?</a>
+          </div>
+        </div>
+
+        <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-outline-success me-md-2" type="button" (click)="login()">Login</button>
+        </div> -->
+
+        <div class="text-center text-lg-start mt-4 pt-2">
+          <button type="submit" class="form-submit" class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+          <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a [routerLink]="['/signup']"
+              class="link-danger">Register</a></p>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
